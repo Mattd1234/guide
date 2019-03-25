@@ -3,8 +3,49 @@ title: Add Inline Styling to Elements
 ---
 ## Add Inline Styling to Elements
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/add-inline-styling-to-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+D3 lets you add inline CSS styles on dynamic elements with the style() method.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+The style() method takes a comma-separated key-value pair as an argument. Here's an example to set the selection's text color to blue:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+selection.style("color","blue");
+
+
+Add the style() method to the code in the editor to make all the displayed text have a font-family of verdana.
+
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+    
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => (d + " USD"))
+      // Add your code below this line
+      
+      ??
+      
+      // Add your code above this line
+  </script>
+</body>
+
+-Make sure that you think the problem through.  The solution is easier than you may think!
+
+-SOLUTION!
+
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+    
+    d3.select("body").selectAll("h2")
+      .data(dataset)
+      .enter()
+      .append("h2")
+      .text((d) => (d + " USD"))
+      // Add your code below this line
+      
+      .style("font-family", "verdana");
+      
+      // Add your code above this line
+  </script>
+</body>
